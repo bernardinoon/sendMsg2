@@ -54,6 +54,7 @@
     "libsignal": "github:adiwajshing/libsignal-node",
     "music-metadata": "^7.12.3",
     "node-cache": "^5.1.2",
+    "node-cron": "^3.0.2",
     "pino": "^7.0.0",
     "protobufjs": "^6.11.3",
     "uuid": "^9.0.0",
