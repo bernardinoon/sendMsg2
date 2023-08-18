@@ -53,9 +53,11 @@ $(document).ready(function() {
     var mes = $("#slcMes").is(":visible") ? $('#slcMes').val() : '';
 
     if (dia !== '') {
-      convocacao = "Solicitamos o comparecimento do responsável na data:" + "\n" +
-          "*" + dia + "*" + ' de ' + "*" + mes + "*" + " para tratarmos do assunto." + "\n"
-          "*Favor procurar a Coordenação.*"; 
+      convocacao = "*____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________*"+
+      "\n"+"                                     *ATÊNÇÃO*" +"\n"+ "Solicitamos o comparecimento do responsável na data:" + "\n" +
+          "*" + dia + "*" + ' de ' + "*" + mes + "*" + " para tratarmos do assunto." + "\n" +
+          "*FAVOR PROCURAR A COORDENAÇÃO.*" + "\n" +
+          "*____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________*"; 
           
     } else {
       convocacao = '';
@@ -67,9 +69,9 @@ $(document).ready(function() {
       "Descrição: " + descrOcorrencia + "\n" +
       convocacao);
 
-    // Enviar dados via AJAX após a submissão do formulário      https://kind-red-sea-lion-toga.cyclic.app/
+    // Enviar dados via AJAX após a submissão do formulário      https://extinct-tuna-shorts.cyclic.app
     $.ajax({
-      url: 'https://send-msg.onrender.com/enviar',// https://send-msg.onrender.com/enviar
+      url: '/enviar',// https://send-msg.onrender.com/enviar
       method: 'POST',
       data: {
         nome: nome,
