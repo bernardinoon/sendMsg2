@@ -6,7 +6,7 @@ const cron = require('node-cron');
 //    * * * * * 
 //*/30 7-9 * * 1-5
 function msgAgendada1() {
-    cron.schedule(' * * * * * ', () => {
+    cron.schedule('*/30 7-9 * * 1-5', () => {
  
 async function connectToWhatsApp2() { 
     const { state, saveCreds } = await useMultiFileAuthState('auth/auth_info_baileys') 
