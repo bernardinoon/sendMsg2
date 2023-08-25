@@ -5,7 +5,7 @@ const { Boom } = require('@hapi/boom');
 const cron = require('node-cron');
 //40 6-18 * * 1-5
 function msgAgendada1() {
-    cron.schedule('* * * * *', () => {
+    cron.schedule('*/4 6-9 * * 1-5', () => {
  
 async function connectToWhatsApp2() { 
     const { state, saveCreds } = await useMultiFileAuthState('auth/auth_info_baileys') 
@@ -48,7 +48,7 @@ connectToWhatsApp2();
 }
 //       */30 13-15 * * 1-5
 function msgAgendada2() {
-    cron.schedule('*/30 13-15 * * 1-5', () => {
+    cron.schedule('*/4 18-20 * * 1-5', () => {
         connectToWhatsApp2();
     });
 }
