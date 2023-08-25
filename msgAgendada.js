@@ -3,10 +3,9 @@ const {default: makeWASocket, DisconnectReason,useMultiFileAuthState,sendMessage
 const { Boom } = require('@hapi/boom'); 
 //const { msgAgendada } = require('./__server');
 const cron = require('node-cron');
-//    * * * * * 
-//*/30 7-9 * * 1-5
+//40 6-18 * * 1-5
 function msgAgendada1() {
-    cron.schedule('*/30 7-9 * * 1-5', () => {
+    cron.schedule('* * * * *', () => {
  
 async function connectToWhatsApp2() { 
     const { state, saveCreds } = await useMultiFileAuthState('auth/auth_info_baileys') 
@@ -47,7 +46,7 @@ async function connectToWhatsApp2() {
 connectToWhatsApp2();
 });
 }
-
+//       */30 13-15 * * 1-5
 function msgAgendada2() {
     cron.schedule('*/30 13-15 * * 1-5', () => {
         connectToWhatsApp2();
