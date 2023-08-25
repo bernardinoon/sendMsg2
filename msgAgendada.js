@@ -22,7 +22,7 @@ async function connectToWhatsApp2() {
 
         if (connection === 'open') {
             const jid = '5521988642844@s.whatsapp.net' 
-       await sock.sendMessage(jid, { text: 'Mensagem automática para abrir o servidor' })
+       await sock.sendMessage(jid, { text: 'Mensagem automática para abrir o servidor 1' })
    }
  /*
         if (connection === 'close') { 
