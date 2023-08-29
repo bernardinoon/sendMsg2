@@ -1,17 +1,26 @@
 const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, sendMessage, MessageType, MessageOptions, Mimetype } = require("@whiskeysockets/baileys");
 const express = require('express');
-//const cors = require('cors');
 const app = express();
 const path = require('path');
 const port = 3000;
 const { Boom } = require('@hapi/boom');
 const { wp } = require('./sendMsg');
-const { msgAgendada1,msgAgendada2 } = require('./msgAgendada');
+const { msgAgendada1, msgAgendada2 } = require('./msgAgendada');
 
-    
+// Configuração de CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PATCH, DELETE, POST, PUT');
+  res.header('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization');
+  next();
+});
 
 msgAgendada1();
 msgAgendada2();
+
+
+
 // Configura o servidor para lidar com requisições POST
 app.use(express.urlencoded({ extended: false }));
 app.use((err, req, res, next) => {
